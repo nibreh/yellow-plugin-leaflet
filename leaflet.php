@@ -5,7 +5,7 @@
 // Leaflet plugin by nibreh - http://leafletjs.com/
 class YellowLeaflet
 {
-	const VERSION = "0.6.1";
+	const VERSION = "0.6.2";
 	var $yellow;			//access to API
 
 	// Handle initialisation
