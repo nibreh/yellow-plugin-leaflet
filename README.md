@@ -55,12 +55,12 @@ To be more precise, use the **query features** as explained [on this blog post](
 
 Embedding a map:
 
-    [leaflet longitude latitude height zoom] 
+    [leaflet] 
     [leaflet 48.000 2.000]
     [leaflet 48.000 2.000 300px 4]
    
 Adding markers on the map:
 
-    [marker 48.85828 2.29450 City] 
-    [marker 48.85828 2.29450 City "Long Adress"] 
-    [marker 48.85828 2.29450 "Great City" "Long Adress" "Text Link" http://web-url.com]
+    [marker 52.5175 13.3882 Berlin]
+    [marker 48.85828 2.29450 "Paris, France" "Eiffel Tower"]
+    [marker 51.495 -0.083 London "Capital of England" "More on Wikipedia" https://en.wikipedia.org/wiki/London]
