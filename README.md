@@ -8,9 +8,9 @@ http://leafletjs.com - *An open-source JavaScript library for mobile-friendly in
 
 ## How do I install this?
 
-1. Download and install Yellow.
-2. Download plugin. If you are using Safari, right click and select 'Download file as'.
-3. Copy leaflet.zip into your system/plugins folder.
+1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/nibreh/yellow-plugin-leaflet/raw/master/leaflet.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy leaflet.zip into your `system/plugins` folder.
 
 To uninstall delete the plugin files.
 
