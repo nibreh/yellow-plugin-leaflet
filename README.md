@@ -1,4 +1,4 @@
-# Leaflet plugin 0.6.1
+# Leaflet plugin 0.6.2
 
 *I wanted a collaborative map, where users can add markers with description and link to a page. For events, or anything else !*
 
@@ -11,8 +11,8 @@ http://leafletjs.com - *An open-source JavaScript library for mobile-friendly in
 ## How do I install this?
 
 1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
-2. [Download plugin](https://github.com/nibreh/yellow-plugin-leaflet/raw/master/leaflet.zip). If you are using Safari, right click and select 'Download file as'.
-3. Copy leaflet.zip into your `system/plugins` folder.
+2. [Download plugin](https://github.com/nibreh/yellow-plugin-leaflet/archive/master.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `master.zip` into your `system/plugins` folder.
 
 To uninstall delete the plugin files.
 
@@ -27,10 +27,7 @@ To change the default values, following arguments are available:
 `HEIGHT` = map height, pixel, default is 500px  
 `ZOOM` = zoom value, default is 5, max is 18
 
-    [leaflet longitude latitude height zoom] 
-    [leaflet 48.000 2.000 300px 4]
-    
-You can also change default values in `leaflet.php` file, lines 26/29
+You can also change default values in your configuration.
 
 ## How to add markers on the map?
 
@@ -45,10 +42,6 @@ The following arguments are available:
 `TEXTLINK` = description for the link  - wrap multiple words into quotes  
 `URL` = url for the link, absolute or relative
 
-    [marker longitude latitude city] 
-    [marker longitude latitude city "Long Adress"] 
-    [marker 48.85828 2.29450 "Great City" "Long Adress" "Text Link" http://web-url.com]
-
 ## How to get longitude/latitude?
 
 1. Go to [openstreetmap.org](https://www.openstreetmap.org) and enter your adress
@@ -57,3 +50,17 @@ The following arguments are available:
 3. Longitude and latitude are the last numbers : 48.000 2.000
 
 To be more precise, use the **query features** as explained [on this blog post](https://blog.openstreetmap.org/2014/12/01/new-query-feature/)
+
+## Example
+
+Embedding a map:
+
+    [leaflet longitude latitude height zoom] 
+    [leaflet 48.000 2.000]
+    [leaflet 48.000 2.000 300px 4]
+   
+Adding markers on the map:
+
+    [marker 48.85828 2.29450 City] 
+    [marker 48.85828 2.29450 City "Long Adress"] 
+    [marker 48.85828 2.29450 "Great City" "Long Adress" "Text Link" http://web-url.com]
