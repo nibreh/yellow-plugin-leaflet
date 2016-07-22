@@ -1,5 +1,7 @@
 # Leaflet plugin 0.6.1
 
+*I wanted a collaborative map, where users can add markers with description and link to a page. For events, or anything else !*
+
 Embed map and add markers with leaflet & Openstreetmap - Plugin for Yellow CMS - https://github.com/datenstrom
 
 http://leafletjs.com - *An open-source JavaScript library for mobile-friendly interactive maps*
