@@ -40,9 +40,9 @@ The following arguments are available:
 
 `LONGITUDE` = set longitude for the marker   
 `LATITUDE` = set latitude for the marker  
-`CITY` = name your city or anything else, in bold  
-`ADRESS` = precise address or anything else  
-`TEXTLINK` = description for the link  
+`CITY` = name your city or anything else, in bold - wrap multiple words into quotes
+`ADRESS` = precise address or anything else - wrap multiple words into quotes
+`TEXTLINK` = description for the link  - wrap multiple words into quotes
 `URL` = url for the link, absolute or relative
 
     [marker longitude latitude city] 
