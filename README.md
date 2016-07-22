@@ -27,6 +27,8 @@ To change the default values, following arguments are available:
 
     [leaflet longitude latitude height zoom] 
     [leaflet 48.000 2.000 300px 4]
+    
+You can also change default values in `leaflet.php` file, lines 26/29
 
 ## How to add markers on the map?
 
