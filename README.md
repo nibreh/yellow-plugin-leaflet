@@ -4,7 +4,7 @@ Embed map and add markers with leaflet & Openstreetmap - Plugin for Yellow CMS -
 
 http://leafletjs.com - *An open-source JavaScript library for mobile-friendly interactive maps*
 
-![screenshot](https://raw.githubusercontent.com/nibreh/yellow-plugin-leaflet/master/leaflet-screenshot.png)
+![screenshot](https://raw.githubusercontent.com/nibreh/yellow-plugin-leaflet/master/screenshot-leaflet.png)
 
 ## How do I install this?
 
