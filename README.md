@@ -23,8 +23,8 @@ To change the default values, following arguments are available:
 `HEIGHT` = map height, pixel, default is 500px  
 `ZOOM` = zoom value, default is 5, max is 18
 
-`[leaflet longitude latitude height zoom]`  
-`[leaflet 48.000 2.000 300px 4]`  
+    [leaflet longitude latitude height zoom] 
+    [leaflet 48.000 2.000 300px 4]
 
 ## How to add markers on the map?
 
@@ -39,9 +39,9 @@ The following arguments are available:
 `TEXTLINK` = description for the link  
 `URL` = url for the link, absolute or relative
 
-`[marker longitude latitude city]`  
-`[marker longitude latitude city "Long Adress"]`  
-`[marker 48.85828 2.29450 "Great City" "Long Adress" "Text Link" http://web-url.com]`  
+    [marker longitude latitude city] 
+    [marker longitude latitude city "Long Adress"] 
+    [marker 48.85828 2.29450 "Great City" "Long Adress" "Text Link" http://web-url.com]
 
 ## How to get longitude/latitude?
 
