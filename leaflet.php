@@ -5,15 +5,15 @@
 // Leaflet plugin by nibreh - http://leafletjs.com/
 class YellowLeaflet
 {
-	const VERSION = "0.6.2";
+	const VERSION = "0.6.4";
 	var $yellow;			//access to API
 
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/");
-		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/");
+		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/");
+		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/");
 		$this->yellow->config->setDefault("LeafletLongitude", "48.000");
 		$this->yellow->config->setDefault("LeafletLatitude", "2.000");
 	}
