@@ -12,8 +12,8 @@ class YellowLeaflet
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/");
-		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/");
+		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/");
+		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/");
 		$this->yellow->config->setDefault("LeafletLongitude", "48.000");
 		$this->yellow->config->setDefault("LeafletLatitude", "2.000");
 	}
@@ -29,7 +29,7 @@ class YellowLeaflet
 			if(empty($latitude)) $latitude = $this->yellow->config->get("LeafletLatitude");
 			if(empty($height)) $height = "500px";
 			if(empty($zoom)) $zoom = "5";
-			$output = "<div id=\"leaflet\" style=\"height:".htmlspecialchars($height)."; z-index:-1;\">\n";
+			$output = "<div id=\"leaflet\" style=\"height:".htmlspecialchars($height)."; z-index:0;\">\n";
 			$output .="</div>\n";
 			$output .= "<script type=\"text/javascript\">\n";
 			$output .= "var map = L.map('leaflet', {";
