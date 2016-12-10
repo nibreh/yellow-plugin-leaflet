@@ -29,7 +29,7 @@ class YellowLeaflet
 			if(empty($latitude)) $latitude = $this->yellow->config->get("LeafletLatitude");
 			if(empty($height)) $height = "500px";
 			if(empty($zoom)) $zoom = "5";
-			$output = "<div id=\"leaflet\" style=\"height:".htmlspecialchars($height)."\">\n";
+			$output = "<div id=\"leaflet\" style=\"height:".htmlspecialchars($height)."; z-index:-1;\">\n";
 			$output .="</div>\n";
 			$output .= "<script type=\"text/javascript\">\n";
 			$output .= "var map = L.map('leaflet', {";
