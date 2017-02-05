@@ -12,8 +12,8 @@ class YellowLeaflet
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/");
-		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/");
+		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/");
+		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/");
 		$this->yellow->config->setDefault("LeafletLongitude", "48.000");
 		$this->yellow->config->setDefault("LeafletLatitude", "2.000");
 	}
