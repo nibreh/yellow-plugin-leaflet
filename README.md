@@ -4,7 +4,7 @@
 
 Embed map and add markers with leaflet & Openstreetmap - Plugin for Yellow CMS - https://github.com/datenstrom
 
-http://leafletjs.com - *An open-source JavaScript library for mobile-friendly interactive maps*
+http://leafletjs.com - *An open-source JavaScript library for mobile-friendly interactive maps*  
 https://github.com/Leaflet/Leaflet.markercluster - *Marker Clustering plugin for Leaflet*
 
 ![screenshot](https://raw.githubusercontent.com/nibreh/yellow-plugin-leaflet/master/screenshot-leaflet.png)
