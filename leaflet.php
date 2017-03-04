@@ -5,15 +5,18 @@
 // Leaflet plugin by nibreh - http://leafletjs.com/
 class YellowLeaflet
 {
-	const VERSION = "0.6.4";
+	const VERSION = "0.6.9";
 	var $yellow;			//access to API
 
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/");
-		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/");
+		$this->yellow->config->setDefault("LeafletJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js");
+		$this->yellow->config->setDefault("LeafletCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css");
+		$this->yellow->config->setDefault("ClusterJs", "https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.3/leaflet.markercluster.js");
+		$this->yellow->config->setDefault("ClusterCss", "https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.3/MarkerCluster.css");
+		$this->yellow->config->setDefault("ClusterCssDefault", "https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.3/MarkerCluster.Default.css");
 		$this->yellow->config->setDefault("LeafletLongitude", "48.000");
 		$this->yellow->config->setDefault("LeafletLatitude", "2.000");
 	}
@@ -39,6 +42,8 @@ class YellowLeaflet
 			$output .= "L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {";
 			$output .= "attribution: '&copy; <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>',";
 			$output .= "}).addTo(map);\n";
+			$output .= "var markers = L.markerClusterGroup();\n";
+			$output .= "map.addLayer(markers);\n";
 			$output .= "</script>\n";
 		}
 
@@ -46,12 +51,13 @@ class YellowLeaflet
 		{
 			list($longitude, $latitude, $city, $adress, $textlink, $url) = $this->yellow->toolbox->getTextArgs($text);
 			$output .= "<script type=\"text/javascript\">\n";
-			$output .= "var marker = L.marker([".strencode($longitude).", ".strencode($latitude)."]).addTo(map);\n";
+			$output .= "var marker = L.marker([".strencode($longitude).", ".strencode($latitude)."]);\n";
 			$output .= "marker.bindPopup(\"";
 			$output .= "<b>".htmlspecialchars($city)."</b><br />";
 			if(!empty($adress)) $output .= htmlspecialchars($adress)."<br />";
 			if(!empty($textlink)) $output .= "<a href='".htmlspecialchars($url)."'>".htmlspecialchars($textlink)."</a>";
 			$output .= "\").closePopup();\n";
+			$output .= "markers.addLayer(marker);\n";
 			$output .= "</script>\n";
 		}
 		return $output;
@@ -65,8 +71,14 @@ class YellowLeaflet
 		{
 			$LeafletJs = $this->yellow->config->get("LeafletJs");
 			$LeafletCss = $this->yellow->config->get("LeafletCss");
-			$output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$LeafletCss}leaflet.css\">\n";
-			$output .= "<script type=\"text/javascript\" src=\"{$LeafletJs}leaflet.js\"></script>\n";
+			$ClusterJs = $this->yellow->config->get("ClusterJs");
+			$ClusterCss = $this->yellow->config->get("ClusterCss");
+			$ClusterCssDefault = $this->yellow->config->get("ClusterCssDefault");
+			$output .= "<script type=\"text/javascript\" src=\"{$LeafletJs}\"></script>\n";
+			$output .= "<script type=\"text/javascript\" src=\"{$ClusterJs}\"></script>\n";
+			$output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$LeafletCss}\">\n";
+			$output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$ClusterCss}\">\n";
+			$output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$ClusterCssDefault}\">\n";
 		}
 		return $output;
 	}
