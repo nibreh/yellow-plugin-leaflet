@@ -37,7 +37,7 @@ class YellowLeaflet
 			$output .= "<script type=\"text/javascript\">\n";
 			$output .= "var map = L.map('leaflet', {";
 			$output .= "center: [".strencode($longitude).", ".strencode($latitude)."], ";
-			$output .= "zoom: ".strencode($zoom);
+			$output .= "zoom: ".strencode($zoom)."";
 			$output .= "});\n";
 			$output .= "L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {";
 			$output .= "attribution: '&copy; <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>',";
