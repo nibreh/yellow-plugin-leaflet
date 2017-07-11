@@ -65,3 +65,21 @@ Adding markers on the map:
     [marker 52.5175 13.3882 Berlin]
     [marker 48.85828 2.29450 "Paris, France" "Eiffel Tower"]
     [marker 51.495 -0.083 London "Capital of England" "More on Wikipedia" https://en.wikipedia.org/wiki/London]
+    
+## How to change CDN & default arguments ?
+
+Go to your `system/config/config.ini` file and change this line:
+
+```
+LeafletJs: https://unpkg.com/leaflet@1.1.0/dist/leaflet.js
+LeafletCss: https://unpkg.com/leaflet@1.1.0/dist/leaflet.css
+ClusterJs: https://unpkg.com/leaflet.markercluster@1.0.6/dist/leaflet.markercluster.js
+ClusterCss: https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css
+ClusterCssDefault: https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css
+FullscreenCss: https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css
+FullscreenJs: https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js
+LeafletLongitude: 48.000
+LeafletLatitude: 2.000
+LeafletHeight: 500px
+LeafletZoom: 15
+```
