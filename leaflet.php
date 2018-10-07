@@ -3,14 +3,12 @@
 // This file may be used and distributed under the terms of the public license.
 
 // Leaflet plugin by nibreh - http://leafletjs.com/
-class YellowLeaflet
-{
-	const VERSION = "0.7.1";
-	var $yellow;			//access to API
+class YellowLeaflet {
+	const VERSION = "0.7.7";
+	public $yellow;			//access to API
 
 	// Handle initialisation
-	function onLoad($yellow)
-	{
+	public function onLoad($yellow) {
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("LeafletJs", "https://unpkg.com/leaflet@1.1.0/dist/leaflet.js");
 		$this->yellow->config->setDefault("LeafletCss", "https://unpkg.com/leaflet@1.1.0/dist/leaflet.css");
@@ -26,11 +24,9 @@ class YellowLeaflet
 	}
 
 	// Handle page content parsing of custom block
-	function onParseContentBlock($page, $name, $text, $shortcut)
-	{
+	public function onParseContentBlock($page, $name, $text, $shortcut) {
 		$output = null;
-		if($name=="leaflet" && $shortcut)
-		{
+		if($name=="leaflet" && $shortcut) {
 			list($longitude, $latitude, $height, $zoom ) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($longitude)) $longitude = $this->yellow->config->get("LeafletLongitude");
 			if(empty($latitude)) $latitude = $this->yellow->config->get("LeafletLatitude");
@@ -40,7 +36,7 @@ class YellowLeaflet
 			$output .= "<script type=\"text/javascript\"> \n";
 			// TILE LAYER
 			$output .= "var tileLayer = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {";
-        	$output .= "attribution: '&copy; <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>'}); \n";	
+        		$output .= "attribution: '&copy; <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>'}); \n";	
 			// CLUSTERGROUP AND SUBGROUP
 			$output .= "var markers = new L.markerClusterGroup(); \n";
 			// VAR MAP
@@ -53,8 +49,7 @@ class YellowLeaflet
 			$output .= "</script>\n";
 		}
 
-		if($name=="marker" && $shortcut)
-		{
+		if($name=="marker" && $shortcut) {
 			list($longitude, $latitude, $city, $adress, $textlink, $url) = $this->yellow->toolbox->getTextArgs($text);
 			$output .= "<script type=\"text/javascript\">\n";
 			$output .= "var marker = L.marker([".strencode($longitude).", ".strencode($latitude)."]);\n";
@@ -70,11 +65,9 @@ class YellowLeaflet
 	}
 
 	// Handle page extra HTML data
-	function onExtra($name)
-	{
+	public function onExtra($name) {
 		$output = null;
-		if($name=="header")
-		{
+		if($name=="header") {
 			$LeafletJs = $this->yellow->config->get("LeafletJs");
 			$LeafletCss = $this->yellow->config->get("LeafletCss");
 			$ClusterJs = $this->yellow->config->get("ClusterJs");
@@ -95,4 +88,3 @@ class YellowLeaflet
 }
 
 $yellow->plugins->register("leaflet", "YellowLeaflet", YellowLeaflet::VERSION);
-?>
