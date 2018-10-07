@@ -1,4 +1,4 @@
-# Leaflet plugin 0.7.1
+# Leaflet plugin
 
 *I wanted a collaborative map, where users can add markers with description and link to a page. For events, or anything else !*
 
